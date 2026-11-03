@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026 台灣縣市長選舉預測</title>
+<meta name="description" content="選出你心目中的勝選政黨，看看全台選舉版圖會是什麼樣子。">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page">
+  <header class="masthead">
+    <h1>2026 台灣縣市長選舉預測</h1>
+    <p class="sub">選出你心目中的勝選政黨，看看全台選舉版圖會是什麼樣子。</p>
+    <p class="hint">點選地圖上的縣市，再選擇政黨與把握程度。</p>
+  </header>
+
+  <main class="layout">
+    <section class="map-panel" aria-label="臺灣縣市地圖">
+      <div id="map-host" aria-busy="true"><p class="map-loading">地圖載入中…</p></div>
+    </section>
+
+    <aside class="side" aria-label="席次統計">
+      <h2>預測席次</h2>
+      <div id="tally" aria-live="polite"></div>
+      <p class="note">淺色代表較不確定的預測，席次仍計入該政黨。預設為全部「未定」，不含任何預測。</p>
+    </aside>
+
+    <section class="actions" aria-label="分享與重設">
+      <button id="btn-export" class="primary" type="button">下載我的預測地圖</button>
+      <button id="btn-copy" type="button">複製分享網址</button>
+      <button id="btn-reset" class="ghost" type="button">重新預測</button>
+    </section>
+  </main>
+
+  <footer class="foot">本工具為使用者自行操作的預測小遊戲，結果不代表實際選情。邊界資料：內政部國土測繪中心（經 taiwan-atlas 整理）。</footer>
+</div>
+
+<div id="picker-backdrop" hidden></div>
+<div id="picker" role="dialog" aria-modal="true" aria-labelledby="picker-title" hidden>
+  <div class="picker-head"><h2 id="picker-title"></h2><button id="picker-close" type="button" aria-label="關閉">×</button></div>
+  <div id="picker-options"></div>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/vendor/html2canvas.min.js"></script>
+<script src="dist/app.js"></script>
+</body>
+</html>
